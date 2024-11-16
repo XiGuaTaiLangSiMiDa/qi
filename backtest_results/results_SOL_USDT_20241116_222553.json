@@ -1,0 +1,42 @@
+{
+  "symbol": "SOL/USDT",
+  "params": {
+    "rsi": {
+      "period": 14,
+      "lower": 30,
+      "upper": 40
+    },
+    "stoch_rsi": {
+      "period": 14,
+      "k": 3,
+      "d": 3,
+      "lower": 20
+    },
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9,
+      "threshold": 0
+    },
+    "bollinger": {
+      "period": 20,
+      "std": 2.0
+    },
+    "obv": {
+      "period": 20,
+      "threshold": 1.5
+    }
+  },
+  "metrics": {
+    "total_trades": 2,
+    "win_rate": 0.0,
+    "avg_return": -0.08654771397920215,
+    "std_return": 0.012180974653064756,
+    "max_return": -0.0779344642005586,
+    "min_return": -0.09516096375784569,
+    "total_return": -0.16567910923512774,
+    "sharpe_ratio": -112.79084026622019,
+    "max_drawdown": -0.16567910923512774
+  },
+  "timestamp": "20241116_222553"
+}

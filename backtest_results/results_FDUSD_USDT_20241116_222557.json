@@ -1,0 +1,42 @@
+{
+  "symbol": "FDUSD/USDT",
+  "params": {
+    "rsi": {
+      "period": 14,
+      "lower": 30,
+      "upper": 40
+    },
+    "stoch_rsi": {
+      "period": 14,
+      "k": 3,
+      "d": 3,
+      "lower": 20
+    },
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9,
+      "threshold": 0
+    },
+    "bollinger": {
+      "period": 20,
+      "std": 2.0
+    },
+    "obv": {
+      "period": 20,
+      "threshold": 1.5
+    }
+  },
+  "metrics": {
+    "total_trades": 11,
+    "win_rate": 0.8181818181818182,
+    "avg_return": 0.0004097447043278316,
+    "std_return": 0.000687472387720874,
+    "max_return": 0.0024043277900219974,
+    "min_return": -0.00010007004903431301,
+    "total_return": 0.004514067836151936,
+    "sharpe_ratio": 9.461464414049662,
+    "max_drawdown": -0.0001000700490342465
+  },
+  "timestamp": "20241116_222557"
+}

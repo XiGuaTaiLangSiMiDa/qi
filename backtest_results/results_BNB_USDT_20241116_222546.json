@@ -1,0 +1,42 @@
+{
+  "symbol": "BNB/USDT",
+  "params": {
+    "rsi": {
+      "period": 14,
+      "lower": 30,
+      "upper": 40
+    },
+    "stoch_rsi": {
+      "period": 14,
+      "k": 3,
+      "d": 3,
+      "lower": 20
+    },
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9,
+      "threshold": 0
+    },
+    "bollinger": {
+      "period": 20,
+      "std": 2.0
+    },
+    "obv": {
+      "period": 20,
+      "threshold": 1.5
+    }
+  },
+  "metrics": {
+    "total_trades": 17,
+    "win_rate": 0.23529411764705882,
+    "avg_return": -0.017145576222462554,
+    "std_return": 0.02468651841493749,
+    "max_return": 0.03749501396090959,
+    "min_return": -0.04581005586592183,
+    "total_return": -0.2584173062889571,
+    "sharpe_ratio": -11.025353192475206,
+    "max_drawdown": -0.3076798839746332
+  },
+  "timestamp": "20241116_222546"
+}

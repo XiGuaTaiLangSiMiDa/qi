@@ -1,0 +1,39 @@
+{
+  "symbol": "USDC/USDT",
+  "params": {
+    "rsi": {
+      "period": 14,
+      "lower": 30,
+      "upper": 40
+    },
+    "stoch_rsi": {
+      "period": 14,
+      "k": 3,
+      "d": 3,
+      "lower": 20
+    },
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9,
+      "threshold": 0
+    },
+    "bollinger": {
+      "period": 20,
+      "std": 2.0
+    },
+    "obv": {
+      "period": 20,
+      "threshold": 1.5
+    }
+  },
+  "metrics": {
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "sharpe_ratio": 0,
+    "max_drawdown": 0,
+    "total_return": 0
+  },
+  "timestamp": "20241116_222558"
+}

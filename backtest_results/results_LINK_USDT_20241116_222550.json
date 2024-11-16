@@ -1,0 +1,42 @@
+{
+  "symbol": "LINK/USDT",
+  "params": {
+    "rsi": {
+      "period": 14,
+      "lower": 30,
+      "upper": 40
+    },
+    "stoch_rsi": {
+      "period": 14,
+      "k": 3,
+      "d": 3,
+      "lower": 20
+    },
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9,
+      "threshold": 0
+    },
+    "bollinger": {
+      "period": 20,
+      "std": 2.0
+    },
+    "obv": {
+      "period": 20,
+      "threshold": 1.5
+    }
+  },
+  "metrics": {
+    "total_trades": 9,
+    "win_rate": 0.4444444444444444,
+    "avg_return": 0.02373440112684447,
+    "std_return": 0.08015700155480635,
+    "max_return": 0.12534059945504095,
+    "min_return": -0.07017543859649121,
+    "total_return": 0.20522138486317765,
+    "sharpe_ratio": 4.700424542882594,
+    "max_drawdown": -0.1305944185357909
+  },
+  "timestamp": "20241116_222550"
+}

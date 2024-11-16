@@ -1,0 +1,42 @@
+{
+  "symbol": "DOGE/USDT",
+  "params": {
+    "rsi": {
+      "period": 14,
+      "lower": 30,
+      "upper": 40
+    },
+    "stoch_rsi": {
+      "period": 14,
+      "k": 3,
+      "d": 3,
+      "lower": 20
+    },
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9,
+      "threshold": 0
+    },
+    "bollinger": {
+      "period": 20,
+      "std": 2.0
+    },
+    "obv": {
+      "period": 20,
+      "threshold": 1.5
+    }
+  },
+  "metrics": {
+    "total_trades": 5,
+    "win_rate": 0.4,
+    "avg_return": 0.05721418319415726,
+    "std_return": 0.14270112020038483,
+    "max_return": 0.30449251247920145,
+    "min_return": -0.04351632956833904,
+    "total_return": 0.2774386213296167,
+    "sharpe_ratio": 6.364680248544666,
+    "max_drawdown": -0.04351632956833906
+  },
+  "timestamp": "20241116_222549"
+}

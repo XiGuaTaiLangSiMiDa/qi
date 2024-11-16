@@ -1,0 +1,42 @@
+{
+  "symbol": "AVAX/USDT",
+  "params": {
+    "rsi": {
+      "period": 14,
+      "lower": 30,
+      "upper": 40
+    },
+    "stoch_rsi": {
+      "period": 14,
+      "k": 3,
+      "d": 3,
+      "lower": 20
+    },
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9,
+      "threshold": 0
+    },
+    "bollinger": {
+      "period": 20,
+      "std": 2.0
+    },
+    "obv": {
+      "period": 20,
+      "threshold": 1.5
+    }
+  },
+  "metrics": {
+    "total_trades": 7,
+    "win_rate": 0.8571428571428571,
+    "avg_return": 0.13809227686579015,
+    "std_return": 0.11434752188037754,
+    "max_return": 0.2622950819672132,
+    "min_return": -0.07222451506397029,
+    "total_return": 1.3942428337132537,
+    "sharpe_ratio": 19.17091773695476,
+    "max_drawdown": -0.07222451506397032
+  },
+  "timestamp": "20241116_222556"
+}
