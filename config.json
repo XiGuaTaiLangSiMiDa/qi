@@ -1,0 +1,22 @@
+{
+    "proxy": {
+        "enabled": true,
+        "http": "http://127.0.0.1:7890",
+        "https": "http://127.0.0.1:7890"
+    },
+    "api": {
+        "timeout": 30000,
+        "rate_limit": 1000,
+        "recv_window": 60000
+    },
+    "analysis": {
+        "min_volume": 1000000,
+        "timeframe": "4h",
+        "lookback_periods": 30,
+        "cache_expiry": 3600
+    },
+    "paths": {
+        "cache_dir": "cache",
+        "results_dir": "analysis_results"
+    }
+}

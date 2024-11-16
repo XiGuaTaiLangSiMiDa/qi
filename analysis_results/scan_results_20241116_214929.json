@@ -1,0 +1,915 @@
+{
+  "scan_time": "2024-11-16T21:49:29.147012",
+  "results": [
+    {
+      "symbol": "ETH/USDT",
+      "current_price": 3162.82,
+      "target_price": 3605.8199999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1667365086.63279,
+      "estimated_time": "1.1天"
+    },
+    {
+      "symbol": "TUSD/USDT",
+      "current_price": 0.9964,
+      "target_price": 1.1358959999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2761989.8512,
+      "estimated_time": "2.6周"
+    },
+    {
+      "symbol": "FET/USDT",
+      "current_price": 1.309,
+      "target_price": 1.4945399999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 71213819.0076,
+      "estimated_time": "14小时"
+    },
+    {
+      "symbol": "ZEC/USDT",
+      "current_price": 40.48,
+      "target_price": 46.1928,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 3543110.93398,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "FTM/USDT",
+      "current_price": 0.7467,
+      "target_price": 0.8512379999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 76327940.7955,
+      "estimated_time": "14小时"
+    },
+    {
+      "symbol": "DUSK/USDT",
+      "current_price": 0.1849,
+      "target_price": 0.210786,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 4714867.0433,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "CVC/USDT",
+      "current_price": 0.1323,
+      "target_price": 0.150708,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2271280.0621,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "IOTX/USDT",
+      "current_price": 0.04119,
+      "target_price": 0.04703639999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 3253498.64265,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "RLC/USDT",
+      "current_price": 1.708,
+      "target_price": 1.9493999999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1499027.5436,
+      "estimated_time": "19小时"
+    },
+    {
+      "symbol": "TROY/USDT",
+      "current_price": 0.004145,
+      "target_price": 0.004713899999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 18851806.470982,
+      "estimated_time": "10小时"
+    },
+    {
+      "symbol": "EUR/USDT",
+      "current_price": 1.0581,
+      "target_price": 1.2061199999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 47950653.15127,
+      "estimated_time": "6.6天"
+    },
+    {
+      "symbol": "COTI/USDT",
+      "current_price": 0.10281,
+      "target_price": 0.11721479999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 5462993.49333,
+      "estimated_time": "14小时"
+    },
+    {
+      "symbol": "DATA/USDT",
+      "current_price": 0.03724,
+      "target_price": 0.042499199999999994,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1080958.006712,
+      "estimated_time": "21小时"
+    },
+    {
+      "symbol": "MDT/USDT",
+      "current_price": 0.04427,
+      "target_price": 0.05050199999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1445644.748916,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "MKR/USDT",
+      "current_price": 1502.0,
+      "target_price": 1709.9999999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 16105204.1297,
+      "estimated_time": "1.1天"
+    },
+    {
+      "symbol": "RSR/USDT",
+      "current_price": 0.007226,
+      "target_price": 0.008243339999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 5622190.165959,
+      "estimated_time": "13小时"
+    },
+    {
+      "symbol": "PAXG/USDT",
+      "current_price": 2573.0,
+      "target_price": 2934.3599999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 4415448.1871,
+      "estimated_time": "5.0天"
+    },
+    {
+      "symbol": "TRB/USDT",
+      "current_price": 69.8,
+      "target_price": 79.69739999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 28919068.44649,
+      "estimated_time": "12小时"
+    },
+    {
+      "symbol": "EGLD/USDT",
+      "current_price": 29.99,
+      "target_price": 34.26839999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 10242012.5692,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "DIA/USDT",
+      "current_price": 0.7589,
+      "target_price": 0.8676539999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2843354.73509,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "RUNE/USDT",
+      "current_price": 5.686,
+      "target_price": 6.4866,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 65917240.2326,
+      "estimated_time": "16小时"
+    },
+    {
+      "symbol": "UMA/USDT",
+      "current_price": 2.493,
+      "target_price": 2.8443,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 3297318.6795,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "UNI/USDT",
+      "current_price": 8.931,
+      "target_price": 10.18362,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 53190774.11256,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "AAVE/USDT",
+      "current_price": 169.33,
+      "target_price": 192.99059999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 58455340.4367,
+      "estimated_time": "20小时"
+    },
+    {
+      "symbol": "PSG/USDT",
+      "current_price": 2.689,
+      "target_price": 3.0631799999999996,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1026875.93499,
+      "estimated_time": "1.3天"
+    },
+    {
+      "symbol": "OG/USDT",
+      "current_price": 5.219,
+      "target_price": 5.95308,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 7125511.9443,
+      "estimated_time": "18小时"
+    },
+    {
+      "symbol": "ATM/USDT",
+      "current_price": 1.991,
+      "target_price": 2.2685999999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1054601.45715,
+      "estimated_time": "1.0天"
+    },
+    {
+      "symbol": "CELO/USDT",
+      "current_price": 0.6612,
+      "target_price": 0.7530839999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 9192458.11201,
+      "estimated_time": "16小时"
+    },
+    {
+      "symbol": "CKB/USDT",
+      "current_price": 0.013121,
+      "target_price": 0.014953379999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 7836736.397577,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "TWT/USDT",
+      "current_price": 0.9767,
+      "target_price": 1.112982,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 6653413.4481,
+      "estimated_time": "22小时"
+    },
+    {
+      "symbol": "SFP/USDT",
+      "current_price": 0.6642,
+      "target_price": 0.756846,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1192965.1926,
+      "estimated_time": "1.0天"
+    },
+    {
+      "symbol": "CAKE/USDT",
+      "current_price": 1.903,
+      "target_price": 2.1694199999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 12452832.70854,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "BADGER/USDT",
+      "current_price": 3.234,
+      "target_price": 3.6924599999999996,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1637765.78093,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "FIS/USDT",
+      "current_price": 0.3226,
+      "target_price": 0.3678779999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1447376.4887,
+      "estimated_time": "19小时"
+    },
+    {
+      "symbol": "SUPER/USDT",
+      "current_price": 1.3217,
+      "target_price": 1.5040019999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 8284351.5088,
+      "estimated_time": "13小时"
+    },
+    {
+      "symbol": "CFX/USDT",
+      "current_price": 0.1522,
+      "target_price": 0.173508,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 9747418.3468,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "TKO/USDT",
+      "current_price": 0.3182,
+      "target_price": 0.362292,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1227417.28885,
+      "estimated_time": "21小时"
+    },
+    {
+      "symbol": "BAR/USDT",
+      "current_price": 2.098,
+      "target_price": 2.3825999999999996,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1251227.87815,
+      "estimated_time": "1.1天"
+    },
+    {
+      "symbol": "SLP/USDT",
+      "current_price": 0.002812,
+      "target_price": 0.00320112,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 5098166.005053,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "LPT/USDT",
+      "current_price": 10.998,
+      "target_price": 12.52404,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 5989225.64495,
+      "estimated_time": "14小时"
+    },
+    {
+      "symbol": "RAY/USDT",
+      "current_price": 4.828,
+      "target_price": 5.50278,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 29980169.381,
+      "estimated_time": "9小时"
+    },
+    {
+      "symbol": "GHST/USDT",
+      "current_price": 0.975,
+      "target_price": 1.1103599999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 13718245.1576,
+      "estimated_time": "20小时"
+    },
+    {
+      "symbol": "SYS/USDT",
+      "current_price": 0.1073,
+      "target_price": 0.12243599999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2124899.743,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "FIDA/USDT",
+      "current_price": 0.2164,
+      "target_price": 0.24680999999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 14249103.11477,
+      "estimated_time": "16小时"
+    },
+    {
+      "symbol": "RARE/USDT",
+      "current_price": 0.1239,
+      "target_price": 0.14124599999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 5440582.21988,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "LAZIO/USDT",
+      "current_price": 1.628,
+      "target_price": 1.8547799999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1511179.47078,
+      "estimated_time": "1.2天"
+    },
+    {
+      "symbol": "BNX/USDT",
+      "current_price": 0.5504,
+      "target_price": 0.6276839999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 6071098.24598,
+      "estimated_time": "16小时"
+    },
+    {
+      "symbol": "MOVR/USDT",
+      "current_price": 11.252,
+      "target_price": 12.840959999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 4866569.356561,
+      "estimated_time": "16小时"
+    },
+    {
+      "symbol": "ENS/USDT",
+      "current_price": 17.93,
+      "target_price": 20.440199999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 19304339.7056,
+      "estimated_time": "16小时"
+    },
+    {
+      "symbol": "QI/USDT",
+      "current_price": 0.0144,
+      "target_price": 0.016427399999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1580695.70765,
+      "estimated_time": "22小时"
+    },
+    {
+      "symbol": "PORTO/USDT",
+      "current_price": 1.801,
+      "target_price": 2.05428,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1117554.20839,
+      "estimated_time": "1.1天"
+    },
+    {
+      "symbol": "SANTOS/USDT",
+      "current_price": 4.152,
+      "target_price": 4.737839999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 7732237.69317,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "FLUX/USDT",
+      "current_price": 0.5695,
+      "target_price": 0.650256,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2800564.850702,
+      "estimated_time": "18小时"
+    },
+    {
+      "symbol": "CVX/USDT",
+      "current_price": 1.992,
+      "target_price": 2.2685999999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1012118.162056,
+      "estimated_time": "18小时"
+    },
+    {
+      "symbol": "GLMR/USDT",
+      "current_price": 0.1828,
+      "target_price": 0.208164,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2435366.77462,
+      "estimated_time": "21小时"
+    },
+    {
+      "symbol": "ACA/USDT",
+      "current_price": 0.0619,
+      "target_price": 0.070452,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2146560.831659,
+      "estimated_time": "19小时"
+    },
+    {
+      "symbol": "ALPINE/USDT",
+      "current_price": 1.411,
+      "target_price": 1.6073999999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1462963.26374,
+      "estimated_time": "1.2天"
+    },
+    {
+      "symbol": "REI/USDT",
+      "current_price": 0.05384,
+      "target_price": 0.061217999999999995,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 4322844.509463,
+      "estimated_time": "18小时"
+    },
+    {
+      "symbol": "LDO/USDT",
+      "current_price": 1.21,
+      "target_price": 1.37826,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 20305921.26292,
+      "estimated_time": "16小时"
+    },
+    {
+      "symbol": "OP/USDT",
+      "current_price": 1.67,
+      "target_price": 1.9026599999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 40356129.81917,
+      "estimated_time": "14小时"
+    },
+    {
+      "symbol": "STG/USDT",
+      "current_price": 0.3241,
+      "target_price": 0.36913199999999996,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 5757820.80552,
+      "estimated_time": "20小时"
+    },
+    {
+      "symbol": "PHB/USDT",
+      "current_price": 1.786,
+      "target_price": 2.0349,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 6097760.9481,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "RPL/USDT",
+      "current_price": 9.91,
+      "target_price": 11.251799999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2511732.7127,
+      "estimated_time": "18小时"
+    },
+    {
+      "symbol": "SYN/USDT",
+      "current_price": 0.5746,
+      "target_price": 0.655842,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2520519.57362,
+      "estimated_time": "12小时"
+    },
+    {
+      "symbol": "SSV/USDT",
+      "current_price": 19.28,
+      "target_price": 21.9108,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 10468505.84496,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "PROM/USDT",
+      "current_price": 5.483,
+      "target_price": 6.2528999999999995,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1505991.82886,
+      "estimated_time": "22小时"
+    },
+    {
+      "symbol": "RDNT/USDT",
+      "current_price": 0.0577,
+      "target_price": 0.06577799999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 6008139.7311,
+      "estimated_time": "16小时"
+    },
+    {
+      "symbol": "COMBO/USDT",
+      "current_price": 0.4303,
+      "target_price": 0.490656,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 1462266.45802,
+      "estimated_time": "18小时"
+    },
+    {
+      "symbol": "PENDLE/USDT",
+      "current_price": 5.385,
+      "target_price": 6.1389,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 24291080.553,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "ARKM/USDT",
+      "current_price": 2.105,
+      "target_price": 2.3883,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 36601216.8594,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "WBETH/USDT",
+      "current_price": 3333.23,
+      "target_price": 3798.7307999999994,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2907425.478703,
+      "estimated_time": "1.1天"
+    },
+    {
+      "symbol": "CYBER/USDT",
+      "current_price": 3.609,
+      "target_price": 4.11426,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 5403197.6339,
+      "estimated_time": "13小时"
+    },
+    {
+      "symbol": "TIA/USDT",
+      "current_price": 5.142,
+      "target_price": 5.85162,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 47952031.29443,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "1000SATS/USDT",
+      "current_price": 0.0002535,
+      "target_price": 0.000288078,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 57128174.9099006,
+      "estimated_time": "12小时"
+    },
+    {
+      "symbol": "ACE/USDT",
+      "current_price": 2.255,
+      "target_price": 2.5706999999999995,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 5452618.7451,
+      "estimated_time": "13小时"
+    },
+    {
+      "symbol": "JUP/USDT",
+      "current_price": 1.1282,
+      "target_price": 1.2835259999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 21014174.77473,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "RONIN/USDT",
+      "current_price": 1.479,
+      "target_price": 1.68264,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 5553680.02082,
+      "estimated_time": "21小时"
+    },
+    {
+      "symbol": "DYM/USDT",
+      "current_price": 1.643,
+      "target_price": 1.8718799999999998,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 5390536.9685,
+      "estimated_time": "14小时"
+    },
+    {
+      "symbol": "STRK/USDT",
+      "current_price": 0.4601,
+      "target_price": 0.5242859999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 19793713.781655,
+      "estimated_time": "13小时"
+    },
+    {
+      "symbol": "AXL/USDT",
+      "current_price": 0.7365,
+      "target_price": 0.836076,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 8954865.27816,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "METIS/USDT",
+      "current_price": 46.09,
+      "target_price": 52.474199999999996,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 6757817.56818,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "AEVO/USDT",
+      "current_price": 0.3633,
+      "target_price": 0.41450399999999993,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 8577737.233533,
+      "estimated_time": "14小时"
+    },
+    {
+      "symbol": "ETHFI/USDT",
+      "current_price": 1.619,
+      "target_price": 1.8456599999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 22326901.8598,
+      "estimated_time": "14小时"
+    },
+    {
+      "symbol": "W/USDT",
+      "current_price": 0.2434,
+      "target_price": 0.277476,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 11181264.84141,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "SAGA/USDT",
+      "current_price": 2.0387,
+      "target_price": 2.329134,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 22957907.33597,
+      "estimated_time": "12小时"
+    },
+    {
+      "symbol": "TAO/USDT",
+      "current_price": 524.3,
+      "target_price": 596.2199999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 49606908.06573,
+      "estimated_time": "16小时"
+    },
+    {
+      "symbol": "OMNI/USDT",
+      "current_price": 8.68,
+      "target_price": 9.8496,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 6221338.0288,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "REZ/USDT",
+      "current_price": 0.03867,
+      "target_price": 0.044015399999999996,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 3973204.032972,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "BB/USDT",
+      "current_price": 0.3202,
+      "target_price": 0.365826,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 8647958.13204,
+      "estimated_time": "15小时"
+    },
+    {
+      "symbol": "ZK/USDT",
+      "current_price": 0.1468,
+      "target_price": 0.167352,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 13317728.6376,
+      "estimated_time": "18小时"
+    },
+    {
+      "symbol": "ZRO/USDT",
+      "current_price": 3.654,
+      "target_price": 4.161,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 14288823.4263,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "G/USDT",
+      "current_price": 0.03066,
+      "target_price": 0.034884,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2047771.32711,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "BANANA/USDT",
+      "current_price": 56.56,
+      "target_price": 64.45559999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 8559345.22636,
+      "estimated_time": "16小时"
+    },
+    {
+      "symbol": "DOGS/USDT",
+      "current_price": 0.0006455,
+      "target_price": 0.0007366679999999999,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 34725911.4111153,
+      "estimated_time": "12小时"
+    },
+    {
+      "symbol": "EURI/USDT",
+      "current_price": 1.058,
+      "target_price": 1.205892,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 6872092.15747,
+      "estimated_time": "6.9天"
+    },
+    {
+      "symbol": "SLF/USDT",
+      "current_price": 0.3094,
+      "target_price": 0.352716,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 2285858.06266,
+      "estimated_time": "18小时"
+    },
+    {
+      "symbol": "NEIRO/USDT",
+      "current_price": 0.00217152,
+      "target_price": 0.0024756581999999996,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 301004074.6786578,
+      "estimated_time": "7小时"
+    },
+    {
+      "symbol": "HMSTR/USDT",
+      "current_price": 0.003977,
+      "target_price": 0.00455544,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 52325178.626962,
+      "estimated_time": "11小时"
+    },
+    {
+      "symbol": "EIGEN/USDT",
+      "current_price": 2.486,
+      "target_price": 2.8511399999999996,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 20363375.18352,
+      "estimated_time": "18小时"
+    },
+    {
+      "symbol": "SCR/USDT",
+      "current_price": 0.635,
+      "target_price": 0.72276,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 9707463.586,
+      "estimated_time": "17小时"
+    },
+    {
+      "symbol": "COW/USDT",
+      "current_price": 0.3864,
+      "target_price": 0.44345999999999997,
+      "probability": 0.7,
+      "signals": "MACD金叉即将形成",
+      "24h_volume": 20272598.94784,
+      "estimated_time": "10小时"
+    }
+  ],
+  "total_opportunities": 101
+}
