@@ -1,0 +1,42 @@
+{
+  "symbol": "ADA/USDT",
+  "params": {
+    "rsi": {
+      "period": 14,
+      "lower": 30,
+      "upper": 40
+    },
+    "stoch_rsi": {
+      "period": 14,
+      "k": 3,
+      "d": 3,
+      "lower": 20
+    },
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9,
+      "threshold": 0
+    },
+    "bollinger": {
+      "period": 20,
+      "std": 2.0
+    },
+    "obv": {
+      "period": 20,
+      "threshold": 1.5
+    }
+  },
+  "metrics": {
+    "total_trades": 19,
+    "win_rate": 0.9473684210526315,
+    "avg_return": 0.05657095776070127,
+    "std_return": 0.028798987441992246,
+    "max_return": 0.09706257982120065,
+    "min_return": -0.02661266994503901,
+    "total_return": 1.825459598506891,
+    "sharpe_ratio": 31.182905850081713,
+    "max_drawdown": -0.026612669945038924
+  },
+  "timestamp": "20241116_222951"
+}

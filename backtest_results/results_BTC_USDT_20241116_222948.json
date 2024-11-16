@@ -1,0 +1,42 @@
+{
+  "symbol": "BTC/USDT",
+  "params": {
+    "rsi": {
+      "period": 14,
+      "lower": 30,
+      "upper": 40
+    },
+    "stoch_rsi": {
+      "period": 14,
+      "k": 3,
+      "d": 3,
+      "lower": 20
+    },
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9,
+      "threshold": 0
+    },
+    "bollinger": {
+      "period": 20,
+      "std": 2.0
+    },
+    "obv": {
+      "period": 20,
+      "threshold": 1.5
+    }
+  },
+  "metrics": {
+    "total_trades": 7,
+    "win_rate": 0.8571428571428571,
+    "avg_return": 0.05547163627743664,
+    "std_return": 0.032781825187239926,
+    "max_return": 0.08357778400693805,
+    "min_return": -0.016246074130903076,
+    "total_return": 0.4548719504701759,
+    "sharpe_ratio": 26.861985914997728,
+    "max_drawdown": -0.016246074130903045
+  },
+  "timestamp": "20241116_222948"
+}

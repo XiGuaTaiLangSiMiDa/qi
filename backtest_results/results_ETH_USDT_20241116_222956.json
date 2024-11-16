@@ -1,0 +1,42 @@
+{
+  "symbol": "ETH/USDT",
+  "params": {
+    "rsi": {
+      "period": 14,
+      "lower": 30,
+      "upper": 40
+    },
+    "stoch_rsi": {
+      "period": 14,
+      "k": 3,
+      "d": 3,
+      "lower": 20
+    },
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9,
+      "threshold": 0
+    },
+    "bollinger": {
+      "period": 20,
+      "std": 2.0
+    },
+    "obv": {
+      "period": 20,
+      "threshold": 1.5
+    }
+  },
+  "metrics": {
+    "total_trades": 31,
+    "win_rate": 0.6129032258064516,
+    "avg_return": 0.05241919059012779,
+    "std_return": 0.09401394790241303,
+    "max_return": 0.29046252915316495,
+    "min_return": -0.04780414593764024,
+    "total_return": 3.3520388127325838,
+    "sharpe_ratio": 8.851121263798067,
+    "max_drawdown": -0.21363630657579913
+  },
+  "timestamp": "20241116_222956"
+}

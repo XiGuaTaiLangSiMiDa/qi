@@ -16,71 +16,112 @@
         "cache_expiry": 3600,
         "indicators": {
             "rsi": {
-                "lower": 30,
-                "upper": 40,
-                "period": 14,
-                "weight": 0.6,
+                "lower": 35,
+                "upper": 45,
+                "period": 10,
+                "weight": 0.7,
                 "optimization_range": {
-                    "lower": [25, 30, 35],
-                    "upper": [40, 45, 50],
-                    "period": [7, 14, 21]
+                    "lower": [30, 35, 40],
+                    "upper": [45, 50, 55],
+                    "period": [7, 10, 14]
                 }
             },
             "stoch_rsi": {
-                "k_period": 3,
-                "d_period": 3,
-                "rsi_period": 14,
-                "stoch_period": 14,
-                "lower": 20,
-                "upper": 80,
-                "weight": 0.65,
+                "k_period": 2,
+                "d_period": 2,
+                "rsi_period": 10,
+                "stoch_period": 10,
+                "lower": 25,
+                "upper": 75,
+                "weight": 0.75,
                 "optimization_range": {
-                    "k_period": [3, 5, 7],
-                    "d_period": [3, 5, 7],
-                    "rsi_period": [10, 14, 18],
-                    "stoch_period": [10, 14, 18],
-                    "lower": [15, 20, 25],
-                    "upper": [75, 80, 85]
+                    "k_period": [2, 3, 4],
+                    "d_period": [2, 3, 4],
+                    "rsi_period": [8, 10, 14],
+                    "stoch_period": [8, 10, 14],
+                    "lower": [20, 25, 30],
+                    "upper": [70, 75, 80]
                 }
             },
             "macd": {
-                "fast_period": 12,
-                "slow_period": 26,
-                "signal_period": 9,
-                "threshold": 0,
-                "weight": 0.7,
+                "fast_period": 8,
+                "slow_period": 21,
+                "signal_period": 7,
+                "threshold": -0.05,
+                "weight": 0.8,
                 "optimization_range": {
-                    "fast_period": [8, 12, 16],
-                    "slow_period": [21, 26, 31],
-                    "signal_period": [7, 9, 11],
+                    "fast_period": [6, 8, 12],
+                    "slow_period": [18, 21, 26],
+                    "signal_period": [5, 7, 9],
                     "threshold": [-0.1, -0.05, 0]
                 }
             },
             "bollinger": {
-                "period": 20,
-                "std_dev": 2,
-                "weight": 0.65,
+                "period": 15,
+                "std_dev": 2.2,
+                "weight": 0.7,
                 "optimization_range": {
-                    "period": [15, 20, 25],
-                    "std_dev": [1.8, 2.0, 2.2]
+                    "period": [12, 15, 20],
+                    "std_dev": [2.0, 2.2, 2.5]
                 }
             },
             "obv": {
-                "ema_period": 20,
-                "threshold": 1.5,
-                "weight": 0.6,
+                "ema_period": 15,
+                "threshold": 1.3,
+                "weight": 0.7,
                 "optimization_range": {
-                    "ema_period": [15, 20, 25],
-                    "threshold": [1.3, 1.5, 1.7]
+                    "ema_period": [10, 15, 20],
+                    "threshold": [1.2, 1.3, 1.5]
                 }
             },
             "volume": {
-                "period": 20,
-                "multiplier": 1.5,
-                "weight": 0.55,
+                "period": 15,
+                "multiplier": 1.3,
+                "weight": 0.65,
                 "optimization_range": {
-                    "period": [15, 20, 25],
-                    "multiplier": [1.3, 1.5, 1.7]
+                    "period": [10, 15, 20],
+                    "multiplier": [1.2, 1.3, 1.5]
+                }
+            }
+        },
+        "market_cap_tiers": {
+            "large": {
+                "min_volume": 50000000,
+                "rsi": {
+                    "lower": 30,
+                    "upper": 40
+                },
+                "stoch_rsi": {
+                    "lower": 20
+                },
+                "macd": {
+                    "threshold": 0
+                }
+            },
+            "medium": {
+                "min_volume": 10000000,
+                "rsi": {
+                    "lower": 35,
+                    "upper": 45
+                },
+                "stoch_rsi": {
+                    "lower": 25
+                },
+                "macd": {
+                    "threshold": -0.05
+                }
+            },
+            "small": {
+                "min_volume": 1000000,
+                "rsi": {
+                    "lower": 40,
+                    "upper": 50
+                },
+                "stoch_rsi": {
+                    "lower": 30
+                },
+                "macd": {
+                    "threshold": -0.1
                 }
             }
         },
