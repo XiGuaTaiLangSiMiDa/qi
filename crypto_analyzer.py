@@ -7,142 +7,51 @@ import time
 import json
 import os
 import sys
-import ssl
 from typing import List, Dict, Tuple
 
 class CryptoAnalyzer:
     def __init__(self):
-        # 加载配置
         self.config = self.load_config()
-        
-        # 配置交易所
-        exchange_config = {
+        self.exchange = ccxt.binance({
             'timeout': self.config['api']['timeout'],
             'enableRateLimit': True,
-            'rateLimit': self.config['api']['rate_limit'],
             'options': {
                 'defaultType': 'spot',
                 'adjustForTimeDifference': True,
-                'recvWindow': self.config['api']['recv_window'],
-                'warnOnFetchOHLCVLimitArgument': False
+                'recvWindow': self.config['api']['recv_window']
             }
-        }
+        })
         
-        # 如果启用了代理，添加代理配置
         if self.config['proxy']['enabled']:
-            exchange_config['proxies'] = {
+            self.exchange.proxies = {
                 'http': self.config['proxy']['http'],
                 'https': self.config['proxy']['https']
             }
-            print("使用代理:", self.config['proxy']['http'])
+            print(f"使用代理: {self.config['proxy']['http']}")
         
-        # 初始化交易所
-        self.exchange = ccxt.binance(exchange_config)
-        
-        # 设置分析参数
+        self.indicators_config = self.config['analysis']['indicators']
+        self.cache_dir = self.config['paths']['cache_dir']
+        self.results_dir = self.config['paths']['results_dir']
         self.min_volume = self.config['analysis']['min_volume']
         self.timeframe = self.config['analysis']['timeframe']
         self.lookback_periods = self.config['analysis']['lookback_periods']
-        self.cache_expiry = self.config['analysis']['cache_expiry']
         
-        # 设置目录
-        self.cache_dir = self.config['paths']['cache_dir']
-        self.results_dir = self.config['paths']['results_dir']
-        
-        # 创建必要的目录
         for directory in [self.cache_dir, self.results_dir]:
             if not os.path.exists(directory):
                 os.makedirs(directory)
-                print(f"创建目录: {directory}")
 
     def load_config(self) -> Dict:
-        """加载配置文件"""
         try:
             with open('config.json', 'r', encoding='utf-8') as f:
                 return json.load(f)
         except Exception as e:
             print(f"加载配置文件失败: {str(e)}", file=sys.stderr)
-            print("使用默认配置")
-            return {
-                "proxy": {"enabled": False},
-                "api": {
-                    "timeout": 30000,
-                    "rate_limit": 1000,
-                    "recv_window": 60000
-                },
-                "analysis": {
-                    "min_volume": 1000000,
-                    "timeframe": "4h",
-                    "lookback_periods": 30,
-                    "cache_expiry": 3600
-                },
-                "paths": {
-                    "cache_dir": "cache",
-                    "results_dir": "analysis_results"
-                }
-            }
-
-    def save_scan_results(self, results: List[Dict]):
-        """保存扫描结果到新文件"""
-        try:
-            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            filename = f"scan_results_{timestamp}.json"
-            filepath = os.path.join(self.results_dir, filename)
-            
-            # 准备保存的数据
-            data = {
-                'scan_time': datetime.now().isoformat(),
-                'results': results,
-                'total_opportunities': len(results)
-            }
-            
-            # 保存结果
-            with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=2)
-            print(f"\n分析结果已保存到: {filepath}")
-            
-        except Exception as e:
-            print(f"保存分析结果时发生错误: {str(e)}", file=sys.stderr)
-
-    def test_connection(self) -> bool:
-        """测试与交易所的连接"""
-        try:
-            print("测试与Binance的连接...")
-            self.exchange.fetch_time()
-            print("连接测试成功")
-            return True
-        except Exception as e:
-            print(f"连接测试失败: {str(e)}", file=sys.stderr)
-            print("\n请检查网络连接或在config.json中配置代理")
-            return False
+            sys.exit(1)
 
     def get_cache_path(self, symbol: str) -> str:
         """获取缓存文件路径"""
         safe_symbol = symbol.replace('/', '_')
         return os.path.join(self.cache_dir, f"{safe_symbol}.json")
-
-    def serialize_dataframe(self, df: pd.DataFrame) -> List[Dict]:
-        """将DataFrame转换为可序列化的格式"""
-        records = []
-        for _, row in df.iterrows():
-            record = {}
-            for column in df.columns:
-                value = row[column]
-                if isinstance(value, pd.Timestamp):
-                    record[column] = value.isoformat()
-                elif isinstance(value, (np.int64, np.float64)):
-                    record[column] = float(value)
-                else:
-                    record[column] = value
-            records.append(record)
-        return records
-
-    def deserialize_dataframe(self, records: List[Dict]) -> pd.DataFrame:
-        """将序列化的数据转换回DataFrame"""
-        df = pd.DataFrame(records)
-        if 'timestamp' in df.columns:
-            df['timestamp'] = pd.to_datetime(df['timestamp'])
-        return df
 
     def load_cache(self, symbol: str) -> Dict:
         """加载缓存数据"""
@@ -151,7 +60,7 @@ class CryptoAnalyzer:
             try:
                 with open(cache_path, 'r') as f:
                     cache_data = json.load(f)
-                if time.time() - cache_data['timestamp'] < self.cache_expiry:
+                if time.time() - cache_data['timestamp'] < self.config['analysis']['cache_expiry']:
                     return cache_data
             except Exception as e:
                 print(f"读取缓存文件出错: {str(e)}", file=sys.stderr)
@@ -166,18 +75,6 @@ class CryptoAnalyzer:
                 json.dump(data, f)
         except Exception as e:
             print(f"保存缓存文件出错: {str(e)}", file=sys.stderr)
-
-    def update_ohlcv_cache(self, symbol: str, df: pd.DataFrame):
-        """更新K线数据缓存"""
-        try:
-            serialized_data = self.serialize_dataframe(df)
-            cache_data = {
-                'ohlcv': serialized_data,
-                'timestamp': time.time()
-            }
-            self.save_cache(symbol, cache_data)
-        except Exception as e:
-            print(f"更新K线数据缓存出错: {str(e)}", file=sys.stderr)
 
     def fetch_all_tickers(self) -> List[Dict]:
         """获取所有交易对的行情数据"""
@@ -240,7 +137,10 @@ class CryptoAnalyzer:
         cache_data = self.load_cache(symbol)
         if cache_data and 'ohlcv' in cache_data:
             print(f"使用缓存的 {symbol} K线数据")
-            return self.deserialize_dataframe(cache_data['ohlcv'])
+            df = pd.DataFrame(cache_data['ohlcv'])
+            if not df.empty:
+                df['timestamp'] = pd.to_datetime(df['timestamp'])
+                return df
 
         max_retries = 3
         retry_delay = 2
@@ -262,7 +162,11 @@ class CryptoAnalyzer:
                 df[numeric_columns] = df[numeric_columns].astype(float)
                 
                 # 保存到缓存
-                self.update_ohlcv_cache(symbol, df)
+                cache_data = {
+                    'ohlcv': df.to_dict(orient='records'),
+                    'timestamp': time.time()
+                }
+                self.save_cache(symbol, cache_data)
                 
                 return df
             except Exception as e:
@@ -275,61 +179,164 @@ class CryptoAnalyzer:
                     print("达到最大重试次数，放弃获取数据")
                     return None
 
+    def calculate_stoch_rsi(self, close_prices: pd.Series, config: Dict) -> pd.Series:
+        """计算Stochastic RSI"""
+        # 计算RSI
+        rsi = ta.momentum.rsi(close_prices, window=config['rsi_period'])
+        
+        # 计算RSI的随机指标
+        stoch_rsi = pd.Series(index=close_prices.index)
+        for i in range(config['stoch_period'], len(rsi)):
+            window = rsi[i-config['stoch_period']:i]
+            if not window.empty:
+                min_rsi = window.min()
+                max_rsi = window.max()
+                if max_rsi - min_rsi != 0:
+                    stoch_rsi[i] = (rsi[i] - min_rsi) / (max_rsi - min_rsi) * 100
+                else:
+                    stoch_rsi[i] = 50  # 如果最大最小值相同，设为中值
+        
+        # 计算K线和D线
+        k = stoch_rsi.rolling(window=config['k_period']).mean()
+        d = k.rolling(window=config['d_period']).mean()
+        
+        return k, d
+
+    def calculate_obv(self, df: pd.DataFrame, config: Dict) -> pd.Series:
+        """计算On Balance Volume (OBV)"""
+        obv = ta.volume.on_balance_volume(df['close'], df['volume'])
+        obv_ema = ta.trend.ema_indicator(obv, window=config['ema_period'])
+        return obv, obv_ema
+
     def calculate_indicators(self, df: pd.DataFrame) -> pd.DataFrame:
-        """计算技术指标"""
+        """计算所有技术指标"""
         try:
             # RSI
-            df['rsi'] = ta.momentum.rsi(df['close'], window=14)
+            df['rsi'] = ta.momentum.rsi(df['close'], 
+                                      window=self.indicators_config['rsi']['period'])
+            
+            # Stochastic RSI
+            df['stoch_k'], df['stoch_d'] = self.calculate_stoch_rsi(
+                df['close'], 
+                self.indicators_config['stoch_rsi']
+            )
             
             # MACD
-            macd = ta.trend.MACD(df['close'])
+            macd = ta.trend.MACD(
+                df['close'],
+                window_fast=self.indicators_config['macd']['fast_period'],
+                window_slow=self.indicators_config['macd']['slow_period'],
+                window_sign=self.indicators_config['macd']['signal_period']
+            )
             df['macd'] = macd.macd()
             df['macd_signal'] = macd.macd_signal()
             
             # Bollinger Bands
-            bollinger = ta.volatility.BollingerBands(df['close'])
+            bollinger = ta.volatility.BollingerBands(
+                df['close'],
+                window=self.indicators_config['bollinger']['period'],
+                window_dev=self.indicators_config['bollinger']['std_dev']
+            )
             df['bb_upper'] = bollinger.bollinger_hband()
             df['bb_lower'] = bollinger.bollinger_lband()
             
-            # Volume indicators
-            df['volume_ema'] = ta.trend.ema_indicator(df['volume'], window=20)
+            # OBV
+            df['obv'], df['obv_ema'] = self.calculate_obv(
+                df, 
+                self.indicators_config['obv']
+            )
             
-            # 计算价格变化率
-            df['price_change'] = df['close'].pct_change()
-            
-            # 计算波动率
-            df['volatility'] = df['price_change'].rolling(window=20).std()
+            # Volume EMA
+            df['volume_ema'] = ta.trend.ema_indicator(
+                df['volume'], 
+                window=self.indicators_config['volume']['period']
+            )
             
             return df
         except Exception as e:
             print(f"计算技术指标时发生错误: {str(e)}", file=sys.stderr)
             return None
 
+    def analyze_potential_breakout(self, df: pd.DataFrame) -> Tuple[float, float, str, int, str]:
+        """分析潜在突破可能性"""
+        try:
+            if len(df) < 20:
+                return 0, 0, "数据不足", 0, "无法估算"
+
+            latest = df.iloc[-1]
+            signals = []
+            probabilities = []
+            
+            # RSI信号
+            rsi_config = self.indicators_config['rsi']
+            if rsi_config['lower'] <= latest['rsi'] <= rsi_config['upper']:
+                signals.append("RSI超卖区间")
+                probabilities.append(rsi_config['weight'])
+            
+            # Stochastic RSI信号
+            stoch_config = self.indicators_config['stoch_rsi']
+            if (latest['stoch_k'] <= stoch_config['lower'] and 
+                latest['stoch_k'] > latest['stoch_d']):
+                signals.append("Stoch RSI超卖区域金叉")
+                probabilities.append(stoch_config['weight'])
+            
+            # MACD信号
+            macd_config = self.indicators_config['macd']
+            if (latest['macd'] > latest['macd_signal'] and 
+                latest['macd'] < macd_config['threshold']):
+                signals.append("MACD金叉即将形成")
+                probabilities.append(macd_config['weight'])
+            
+            # 布林带信号
+            if latest['close'] <= latest['bb_lower']:
+                signals.append("价格触及布林带下轨")
+                probabilities.append(self.indicators_config['bollinger']['weight'])
+            
+            # OBV信号
+            obv_config = self.indicators_config['obv']
+            if latest['obv'] > latest['obv_ema'] * obv_config['threshold']:
+                signals.append("OBV放量突破")
+                probabilities.append(obv_config['weight'])
+            
+            # 成交量信号
+            volume_config = self.indicators_config['volume']
+            if latest['volume'] > latest['volume_ema'] * volume_config['multiplier']:
+                signals.append("成交量放大")
+                probabilities.append(volume_config['weight'])
+            
+            if not probabilities:
+                return 0, 0, "无明显信号", 0, "无法估算"
+            
+            probability = np.mean(probabilities)
+            current_price = latest['close']
+            potential_target = current_price * (1 + probability * 0.2)
+            
+            # 估算达到目标价格的时间
+            estimated_hours, time_desc = self.estimate_target_time(df, current_price, potential_target)
+            
+            return probability, potential_target, ", ".join(signals), estimated_hours, time_desc
+        except Exception as e:
+            print(f"分析突破可能性时发生错误: {str(e)}", file=sys.stderr)
+            return 0, 0, f"分析错误: {str(e)}", 0, "无法估算"
+
     def estimate_target_time(self, df: pd.DataFrame, current_price: float, target_price: float) -> Tuple[int, str]:
         """估算达到目标价格的时间"""
         try:
-            # 获取最近的价格变化率和波动率
+            df['price_change'] = df['close'].pct_change()
+            df['volatility'] = df['price_change'].rolling(window=20).std()
+            
             recent_price_change = df['price_change'].tail(20).mean()
             recent_volatility = df['volatility'].tail(20).mean()
             
-            # 计算目标价格的涨幅
             required_change = (target_price / current_price) - 1
             
-            # 基于历史波动率和价格变化率估算达到目标价格所需的4小时K线数量
             if recent_price_change > 0:
-                # 如果最近趋势向上，使用实际趋势和波动率的组合
                 estimated_periods = abs(required_change) / (recent_price_change + recent_volatility)
             else:
-                # 如果最近趋势向下，主要依赖波动率
                 estimated_periods = abs(required_change) / recent_volatility
 
-            # 将K线数量转换为小时
             estimated_hours = int(estimated_periods * 4)
             
-            # 计算预计达到时间
-            target_time = datetime.now() + timedelta(hours=estimated_hours)
-            
-            # 格式化时间描述
             if estimated_hours < 24:
                 time_desc = f"{estimated_hours}小时"
             else:
@@ -345,52 +352,25 @@ class CryptoAnalyzer:
             print(f"估算目标时间时发生错误: {str(e)}", file=sys.stderr)
             return 0, "无法估算"
 
-    def analyze_potential_breakout(self, df: pd.DataFrame) -> Tuple[float, float, str, int, str]:
-        """分析潜在突破可能性"""
+    def save_scan_results(self, results: List[Dict]):
+        """保存扫描结果"""
         try:
-            if len(df) < 20:
-                return 0, 0, "数据不足", 0, "无法估算"
-
-            latest = df.iloc[-1]
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            filename = f"scan_results_{timestamp}.json"
+            filepath = os.path.join(self.results_dir, filename)
             
-            signals = []
-            probabilities = []
+            data = {
+                'scan_time': datetime.now().isoformat(),
+                'results': results,
+                'total_opportunities': len(results)
+            }
             
-            # RSI信号
-            if 30 <= latest['rsi'] <= 40:
-                signals.append("RSI超卖区间")
-                probabilities.append(0.6)
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            print(f"\n分析结果已保存到: {filepath}")
             
-            # MACD信号
-            if latest['macd'] > latest['macd_signal'] and latest['macd'] < 0:
-                signals.append("MACD金叉即将形成")
-                probabilities.append(0.7)
-            
-            # 布林带信号
-            if latest['close'] <= latest['bb_lower']:
-                signals.append("价格触及布林带下轨")
-                probabilities.append(0.65)
-            
-            # 成交量信号
-            if latest['volume'] > latest['volume_ema'] * 1.5:
-                signals.append("成交量放大")
-                probabilities.append(0.55)
-            
-            if not probabilities:
-                return 0, 0, "无明显信号", 0, "无法估算"
-            
-            probability = np.mean(probabilities)
-            
-            current_price = latest['close']
-            potential_target = current_price * (1 + probability * 0.2)
-            
-            # 估算达到目标价格的时间
-            estimated_hours, time_desc = self.estimate_target_time(df, current_price, potential_target)
-            
-            return probability, potential_target, ", ".join(signals), estimated_hours, time_desc
         except Exception as e:
-            print(f"分析突破可能性时发生错误: {str(e)}", file=sys.stderr)
-            return 0, 0, f"分析错误: {str(e)}", 0, "无法估算"
+            print(f"保存分析结果时发生错误: {str(e)}", file=sys.stderr)
 
     def scan_market(self) -> List[Dict]:
         """扫描市场寻找潜在机会"""
@@ -438,11 +418,6 @@ class CryptoAnalyzer:
 def main():
     analyzer = CryptoAnalyzer()
     
-    # 首先测试连接
-    if not analyzer.test_connection():
-        print("无法连接到交易所，程序退出")
-        return
-        
     print("开始扫描市场...")
     results = analyzer.scan_market()
     
@@ -450,7 +425,7 @@ def main():
         print("未找到符合条件的交易机会")
         return
 
-    # 保存分析结果到文件
+    # 保存分析结果
     analyzer.save_scan_results(results)
 
     # 打印分析结果
